@@ -1,21 +1,31 @@
-﻿using System;
-using System.Web;
-using System.Web.UI;
+﻿namespace kataAsp
+{
 
-namespace kataAsp {
-    public partial class Default : System.Web.UI.Page {
-        public void btnClick(object sender, EventArgs args) {
-            
+    public partial class Default : System.Web.UI.Page
+    {
+        public int arithmeticOperation(string operation, int operandOne, int operandTwo)
+        {
+            if (operation.Equals("+"))
+            {
+                return operandOne + operandTwo;
+            }
+            else if (operation.Equals("-"))
+            {
+                return operandOne - operandTwo;
+            }
+            else if (operation.Equals("*"))
+            {
+                return operandOne * operandTwo;
+            }
+            else
+                return operandOne / operandTwo;
         }
 
-        public int exampleSum() {
-            return 9;    
-        }
-
-        public object nashPrisoner() {
-            //Console.Out.WriteLine("data");
-            var exampleClass = new exampleClass();
-            return exampleClass;
+        public Prisoner nashPrisonerOne(string prisonerName)
+        {
+            var prisoner = new Prisoner();
+            prisoner.Name = prisonerName;
+            return prisoner;
         }
     }
 }
